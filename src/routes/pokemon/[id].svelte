@@ -14,8 +14,12 @@
 <script>
    export let pokeman;
    const type = pokeman.types[0].type.name;
-   const num = pokeman.id;
+   const name = pokeman.name.toUpperCase();
 </script>
+
+<svelte:head>
+   <title>Pokedex | {name}</title>
+</svelte:head>
 
 <div class="flex flex-col items-center">
    <h1 class="text-4xl text-center my-8 uppercase">{pokeman.name}</h1>
