@@ -20,6 +20,7 @@
 
 <script>
    import PokemanCard from '../Components/pokemanCard.svelte';
+   import { fade } from 'svelte/transition';
    export let pokemon;
    
    let searchTerm = "";
@@ -38,9 +39,9 @@
 	<title>Pokedex | Home</title>
 </svelte:head>
 
-<h1 class="text-4xl text-center my-8 uppercase">Pokedex</h1>
+<h1 class="text-4xl text-center my-8 uppercase" transition:fade>Pokedex</h1>
 
-<input type="text" placeholder="Search Pokemon" class="w-full rounded-md text-lg p-4 border-2 border-gray-200" bind:value={searchTerm}>
+<input type="text" placeholder="Search Pokemon" class="w-full rounded-md text-lg p-4 border-2 border-gray-200" bind:value={searchTerm} transition:fade>
 
 <div class="grid gap-4 md:grid-cols-2 grid-cols-1 mt-4">
    {#each filteredPokemon as pokeman}
